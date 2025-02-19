@@ -1,12 +1,9 @@
 import random
-class warrior:
-  def __init__(self):
-    print('введите количество здоровия воина')
-    self.health = int(input())
-    print('введите количество брони воина')
-    self.armor = int(input())
-    print('введите количество выносливости воина')
-    self.stamina = int(input())
+class warrior():
+  def __init__(self, hp, ap, sp):
+    self.health = hp
+    self.armor = ap
+    self.stamina = sp
   def hithit(self, enemy):
     #print('оба ударили')
     if self.stamina > 0:
@@ -30,23 +27,23 @@ class warrior:
         enemy.health-=random.randint(10, 30)
     else:
       enemy.health-=random.randint(0, 10)
-unit1 = warrior()
-unit2 = warrior()
-while unit1.health > 10 and unit2.health > 10:
-  #print(unit1.health,' - ',unit2.health)
-  #print(unit1.armor,' - ',unit2.armor)
-  #print(unit1.stamina,' - ',unit2.stamina)
-  #print('\n')
-  r1 = random.randint(1, 2)
-  r2 = random.randint(1, 2)
-  if r1 == 1 and r2 == 1:
-    unit1.hithit(unit2)
-  elif r1 == 1 and r2 == 2:
-    unit1.hitdefense(unit2)
-  elif r1 == 2 and r2 == 1:
-    unit2.hitdefense(unit1)
-else:
-  if unit1.health <= 10:
-    print('победил 2 воин')
-  else:
-    print('победил 1 воин')
+#unit1 = warrior(200, 100, 200)
+#unit2 = warrior(300, 0, 100)
+# while unit1.health > 10 and unit2.health > 10:
+#   #print(unit1.health,' - ',unit2.health)
+#   #print(unit1.armor,' - ',unit2.armor)
+#   #print(unit1.stamina,' - ',unit2.stamina)
+#   #print('\n')
+#   r1 = random.randint(1, 2)
+#   r2 = random.randint(1, 2)
+#   if r1 == 1 and r2 == 1:
+#     unit1.hithit(unit2)
+#   elif r1 == 1 and r2 == 2:
+#     unit1.hitdefense(unit2)
+#   elif r1 == 2 and r2 == 1:
+#     unit2.hitdefense(unit1)
+# else:
+#   if unit1.health <= 10:
+#     print('победил 2 воин')
+#   else:
+#     print('победил 1 воин')
